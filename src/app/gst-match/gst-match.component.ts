@@ -82,14 +82,10 @@ export class GstMatchComponent implements OnInit {
     this.progressPlayersCAS = [];
     this.progressPlayersPASS = [];
 
-    this.getNameTeam('CarlosD', 0, 50);
-    this.getNameTeam('Carlos', 1, 50);
-    this.getNameTeam('Isra', 2, 50);
-    this.getNameTeam('Ferran', 3, 60);
-    this.getNameTeam('Vicente', 4, 70);
-    this.getNameTeam('Kaja', 5, 50);
-    this.getNameTeam('Luis', 6, 60);
-    this.getNameTeam('Javi', 7, 60);
+    this.getNameTeam('Carlos2', 0, 60);
+    this.getNameTeam('Carles2', 1, 70);
+    this.getNameTeam('Isra2', 2, 70);
+    this.getNameTeam('Marc2', 3, 60);
   }
 
   prepareClasification() {

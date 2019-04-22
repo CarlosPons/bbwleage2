@@ -27,7 +27,7 @@ export class BusinessService {
   getMatchList() {
     return this
     .http
-    .get(`${this.uri}EncuentroGlobal${this.apikey}`);
+    .get(`${this.uri}EncuentroGlobal2${this.apikey}`);
   }
 
   createMatchResult(jornada, equipoLocal, tantosLocal, bajasCausadasPorLocal, pasesLocal, intercepcionesLocal, ingresosLocal,
@@ -52,8 +52,7 @@ export class BusinessService {
     };
     this
       .http
-      .post(`${this.uri}EncuentroGlobal${this.apikey}`, obj)
-      .subscribe(res => console.log('Done'));
+      .post(`${this.uri}EncuentroGlobal2${this.apikey}`, obj);
   }
 
   updateInfoTeam(coach, _id, teamName, race,
@@ -104,8 +103,7 @@ export class BusinessService {
       };
       this
       .http
-      .post(`${this.uri}Equipo${coach}${this.apikey}`, obj)
-      .subscribe(res => console.log('Done0'));
+      .post(`${this.uri}Equipo${coach}${this.apikey}`, obj);
     }
 
   updatePlayer(coach, _id, id, name, position,
