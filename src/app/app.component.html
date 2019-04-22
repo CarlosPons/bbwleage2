@@ -1,0 +1,62 @@
+<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <ul class="navbar-nav"> 
+      <li class="nav-item">
+        <a [routerLink]="['teamview', 'CarlosD']" class="nav-link" routerLinkActive="active">
+          Humanos - Carlos Diaz
+        </a>
+      </li>  
+      <li class="nav-item">
+        <a [routerLink]="['teamview', 'Carlos']" class="nav-link" routerLinkActive="active">
+          ElfosOscuros - Carlos Pons
+        </a>
+      </li>          
+      <li class="nav-item">
+        <a [routerLink]="['teamview', 'Ferran']" class="nav-link" routerLinkActive="active">
+          Caos - Ferran
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['teamview', 'Isra']" class="nav-link" routerLinkActive="active">
+          Humanos - Isra
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['teamview', 'Javi']" class="nav-link" routerLinkActive="active">
+          Orcos - Javi
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['teamview', 'Kaja']" class="nav-link" routerLinkActive="active">
+          ElfosSilvanos - Kaja
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['teamview', 'Luis']" class="nav-link" routerLinkActive="active">
+          Skavens - Luis
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['teamview', 'Vicente']" class="nav-link" routerLinkActive="active">
+          Nigromantes - Vicente
+        </a>
+      </li> 
+      <br>
+      <li class="nav-item">
+        <a [routerLink]="['matchResult']" class="nav-link" routerLinkActive="active">
+          <b>Partidos y resultados</b>
+        </a>
+      </li> 
+      <li class="nav-item">
+          <a [routerLink]="['tables']" class="nav-link" routerLinkActive="active">
+            <b>Tablas de juego</b>
+          </a>
+        </li> 
+    </ul>
+  </div>
+</nav>
+<br />
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

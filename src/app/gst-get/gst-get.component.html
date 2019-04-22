@@ -1,0 +1,189 @@
+<div *ngIf="coach === 'Carlos'" class="card">
+    <a class="navbar-item" style="margin: auto;">
+      <img src="../../assets/img/DarkElves.jpg">
+      </a>
+</div>
+<div *ngIf="coach === 'CarlosD'" class="card">
+  <a class="navbar-item" style="margin: auto;">
+    <img src="../../assets/img/Human2.jpg">
+    </a>
+</div>
+<div *ngIf="coach === 'Ferran'" class="card">
+  <a class="navbar-item" style="margin: auto;">
+    <img src="../../assets/img/Caos.jpg">
+    </a>
+</div>
+<div *ngIf="coach === 'Isra'" class="card">
+  <a class="navbar-item" style="margin: auto;">
+    <img src="../../assets/img/Human.jpg">
+    </a>
+</div>
+<div *ngIf="coach === 'Javi'" class="card">
+  <a class="navbar-item" style="margin: auto;">
+    <img src="../../assets/img/Orcs.jpg">
+    </a>
+</div>
+<div *ngIf="coach === 'Kaja'" class="card">
+  <a class="navbar-item" style="margin: auto;">
+    <img src="../../assets/img/WoodElves.jpg">
+    </a>
+</div>
+<div *ngIf="coach === 'Luis'" class="card">
+  <a class="navbar-item" style="margin: auto;">
+    <img src="../../assets/img/Skaven.jpg">
+    </a>
+</div>
+<div *ngIf="coach === 'Vicente'" class="card">
+  <a class="navbar-item" style="margin: auto;">
+    <img src="../../assets/img/Necromantic.jpg">
+    </a>
+</div>
+<br>
+<div class="card" *ngIf="infoTeam">
+  <div class="card-body" >
+    <form [formGroup]="infoTeamForm" novalidate>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Nombre del equipo</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="teamName" [(ngModel)] = "infoTeam.teamName" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Raza </label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="race" [(ngModel)] = "infoTeam.race" />
+      </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Tesoro</label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="treasury" [(ngModel)] = "infoTeam.treasury" />
+      </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Entrenador</label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="coachFullName" [(ngModel)] = "infoTeam.coachFullName" />
+      </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Re-rolls</label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="rerolls" [(ngModel)] = "infoTeam.rerolls" />
+      </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Factor de hinchas</label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="fanFactor" [(ngModel)] = "infoTeam.fanFactor" />
+      </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Asistentes del entrenador</label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="assitant" [(ngModel)] = "infoTeam.assitant" />
+      </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Animadoras</label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="cheerleaders" [(ngModel)] = "infoTeam.cheerleaders" />
+      </span>
+      </div>                              
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Médico</label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="apothecary" [(ngModel)] = "infoTeam.apothecary" />
+      </span>
+      </div> 
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+        <label>Mago</label>
+      </span>
+        <span class="col-md-9" style="display: inline-block;">
+        <input type="text" class="form-control" formControlName="wizard" [(ngModel)] = "infoTeam.wizard" />
+      </span>
+      </div>             
+      <div class="form-group">
+          <button (click)="updateInfoTeam(infoTeam.teamName, infoTeam.race,
+          infoTeam.treasury, infoTeam.coachFullName, infoTeam.rerolls,
+          infoTeam.fanFactor, infoTeam.assitant, infoTeam.cheerleaders,
+          infoTeam.apothecary, infoTeam.wizard, infoTeam.comment)"
+          class="btn btn-primary">Actualizar datos</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+        <td>Dorsal</td>
+        <td>Nombre</td>
+        <td>Posicion</td>
+        <td>MOV</td>
+        <td>FU</td>
+        <td>AG</td>
+        <td>ARM</td>
+        <td>Habilidades</td>
+        <td>Pases</td>
+        <td>Tantos</td>
+        <td>Intercep.</td>
+        <td>Bajas</td>
+        <td>Mejor Jug</td>
+        <td>SSP</td>
+        <td>Coste</td>
+        <td>Comentarios</td>
+        <td>Lesionado (S/N)</td>
+        <td></td>
+        <td></td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let player of players">
+        <td>{{ player.id }}</td>
+        <td>{{ player.name }}</td>
+        <td>{{ player.position }}</td>
+        <td>{{ player.MA }}</td>
+        <td>{{ player.ST }}</td>
+        <td>{{ player.AG }}</td>
+        <td>{{ player.AV }}</td>
+        <td>{{ player.skills }}</td>
+        <td>{{ player.COMP }}</td>
+        <td>{{ player.TD }}</td>
+        <td>{{ player.INT }}</td>
+        <td>{{ player.CAS }}</td>
+        <td>{{ player.MVP }}</td>
+        <td>{{ player.TD*3 + player.INT*2 + player.COMP*1 + player.CAS*2 + player.MVP*5 }}</td>
+        <td>{{ player.cost }}K</td>
+        <td>{{ player.comment }}</td>
+        <td>{{ player.missesNextMatch }}</td>
+        <td><a [routerLink]="['/editPlayer', coach, player.id]" class="btn btn-primary">Actualizar</a></td>
+    </tr>
+  </tbody>
+
+</table>
+
+<a [routerLink]="['/editPlayer', coach, '0']" class="btn btn-primary">Contratar Jugador</a>
+

@@ -1,0 +1,293 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="matchForm" novalidate>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Jornada</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="jornada" [(ngModel)]="match.jornada" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Equipo local</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <select *ngIf="teams" [(ngModel)]="match.equipoLocal" formControlName="equipoLocal" class="form-control"
+            required>
+            <option *ngFor="let localTeam of teams" [value]="localTeam">
+              {{localTeam}}
+            </option>
+          </select>
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Tantos local</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="tantosLocal"
+            [(ngModel)]="match.tantosLocal" />
+        </span>
+      </div>      
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Bajas causadas</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="bajasCausadasPorLocal"
+            [(ngModel)]="match.bajasCausadasPorLocal" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Pases equipo local</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="pasesLocal" [(ngModel)]="match.pasesLocal" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Intercepciones</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="intercepcionesLocal"
+            [(ngModel)]="match.intercepcionesLocal" />
+        </span>
+      </div>      
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Ingresos equipo local</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="ingresosLocal" [(ngModel)]="match.ingresosLocal" />
+        </span>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Equipo Visitante</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <select *ngIf="teams" [(ngModel)]="match.equipoVisitante" formControlName="equipoLocal" class="form-control"
+            required>
+            <option *ngFor="let localTeam of teams" [value]="localTeam">
+              {{localTeam}}
+            </option>
+          </select>
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Tantos visitante</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="tantosVisitante"
+            [(ngModel)]="match.tantosVisitante" />
+        </span>
+      </div>      
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Bajas causadas</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="bajasCausadasPorVisitante"
+            [(ngModel)]="match.bajasCausadasPorVisitante" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Pases equipo Visitante</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="pasesVisitante" [(ngModel)]="match.pasesVisitante" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Intercepciones</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="intercepcionesVisitante"
+            [(ngModel)]="match.intercepcionesVisitante" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Ingresos equipo Visitante</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="ingresosVisitante"
+            [(ngModel)]="match.ingresosVisitante" />
+        </span>
+      </div>
+
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Comentarios partido</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="comment" [(ngModel)]="match.comment" />
+        </span>
+      </div>
+
+      <div class="form-group">
+        <button (click)="createMatchResult(match.jornada , match.equipoLocal , match.tantosLocal , match.bajasCausadasPorLocal , match.pasesLocal , match.intercepcionesLocal , match.ingresosLocal,
+                        match.equipoVisitante , match.tantosVisitante , match.bajasCausadasPorVisitante , match.pasesVisitante , match.intercepcionesVisitante , match.ingresosVisitante,
+                        match.comment)" class="btn btn-primary">Publicar resultados partido</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<br>
+<b>Resultados</b>
+<br>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>JORNADA</td>
+      <td></td>
+      <td>Local</td>
+      <td>Tantos</td>
+      <td></td>
+      <td>Visitante</td>
+      <td>Tantos</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let match of matchList">
+      <td>{{ match.jornada }}</td>
+      <td></td>
+      <td>{{ match.equipoLocal }}</td>
+      <td>{{ match.tantosLocal }}</td>
+      <td></td>
+      <td>{{ match.equipoVisitante }}</td>
+      <td>{{ match.tantosVisitante }}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+<br>
+<b>Clasificación + Valoraciones Equipos</b>
+<br>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>EQUIPO</td>
+      <td></td>
+      <td>Valoración</td>
+      <td>PJ</td>
+      <td>V</td>
+      <td>E</td>
+      <td>D</td>
+      <td>GF</td>
+      <td>GC</td>
+      <td>Pts</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let progressTeam of progressTeams">
+      <td>{{ progressTeam.name }}</td>
+      <td></td>      
+      <td>{{ progressTeam.value }}</td>
+      <td>{{ progressTeam.playedGames }}</td>
+      <td>{{ progressTeam.victories }}</td>
+      <td>{{ (progressTeam.playedGames - progressTeam.victories - progressTeam.defeats) }}</td>
+      <td>{{ progressTeam.defeats }}</td>
+      <td>{{ progressTeam.td }}</td>
+      <td>{{ progressTeam.tdOpponent }}</td>
+      <td>{{ progressTeam.victoryPoints }}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+<br>
+<b>Tabla de anotadores</b>
+<br>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>EQUIPO</td>
+      <td></td>
+      <td>Jugador</td>
+      <td>Touchdowns</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let progressPlayer of progressPlayers">
+      <td>{{ progressPlayer.teamName }}</td>
+      <td></td>      
+      <td>{{ progressPlayer.name }}</td>
+      <td>{{ progressPlayer.td }}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+<br>
+<b>Tabla de exterminadores</b>
+<br>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>EQUIPO</td>
+      <td></td>
+      <td>Jugador</td>
+      <td>Bajas causadas</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let progressPlayer of progressPlayersCAS">
+      <td>{{ progressPlayer.teamName }}</td>
+      <td></td>      
+      <td>{{ progressPlayer.name }}</td>
+      <td>{{ progressPlayer.cas }}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+<br>
+<b>Tabla de pasadores</b>
+<br>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>EQUIPO</td>
+      <td></td>
+      <td>Jugador</td>
+      <td>Pases realizados</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let progressPlayer of progressPlayersPASS">
+      <td>{{ progressPlayer.teamName }}</td>
+      <td></td>      
+      <td>{{ progressPlayer.name }}</td>
+      <td>{{ progressPlayer.pass }}</td>
+    </tr>
+  </tbody>
+
+</table>

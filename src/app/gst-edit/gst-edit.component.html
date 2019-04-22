@@ -1,0 +1,140 @@
+<div class="card" *ngIf="player">
+  <div class="card-body">
+    <form [formGroup]="playerForm" novalidate>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Dorsal</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="id" [(ngModel)]="player.id" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Nombre</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="name" [(ngModel)]="player.name" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Posición</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="position" [(ngModel)]="player.position" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>MOV</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="MA" [(ngModel)]="player.MA" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>FU</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="ST" [(ngModel)]="player.ST" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>AG</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="AG" [(ngModel)]="player.AG" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>ARM</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="AV" [(ngModel)]="player.AV" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Habilidades</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="skills" [(ngModel)]="player.skills" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Pases completos (solo lanzador)</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="COMP" [(ngModel)]="player.COMP" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Tantos</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="TD" [(ngModel)]="player.TD" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Pases interceptados</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="INT" [(ngModel)]="player.INT" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Bajas causadas</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="CAS" [(ngModel)]="player.CAS" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Mejor jugador encuentro</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="MVP" [(ngModel)]="player.MVP" />
+        </span>
+      </div>
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Lesionado (S/N)</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="missesNextMatch" [(ngModel)]="player.missesNextMatch" />
+        </span>
+      </div>       
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Precio jugador actualizado</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="cost" [(ngModel)]="player.cost" />
+        </span>
+      </div>        
+      <div class="form-group">
+        <span class="col-md-3" style="display: inline-block;">
+          <label>Comentarios sobre el jugador</label>
+        </span>
+        <span class="col-md-9" style="display: inline-block;">
+          <input type="text" class="form-control" formControlName="comment" [(ngModel)]="player.comment" />
+        </span>
+      </div>                                    
+      <div class="form-group">
+        <button (click)="updatePlayer(player.id, player.name, player.position, player.MA,
+                                      player.ST, player.AG, player.AV, player.skills,
+                                      player.COMP, player.TD, player.INT, player.CAS,
+                                      player.MVP, player.cost,
+                                      player.comment, player.missesNextMatch)" class="btn btn-primary">Actualizar perfil jugador</button>
+      </div>
+    </form>
+  </div>
