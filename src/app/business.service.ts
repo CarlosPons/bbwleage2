@@ -103,7 +103,8 @@ export class BusinessService {
       };
       this
       .http
-      .post(`${this.uri}Equipo${coach}${this.apikey}`, obj);
+      .post(`${this.uri}Equipo${coach}${this.apikey}`, obj)
+      .subscribe(res => console.log('Done - POST'));
     }
 
   updatePlayer(coach, _id, id, name, position,
